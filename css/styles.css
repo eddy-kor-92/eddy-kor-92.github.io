@@ -8043,6 +8043,10 @@ textarea.form-control-lg {
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .text-secondary {
   --bs-text-opacity: 1;
   color: #ecb671; !important;
@@ -11100,7 +11104,22 @@ html {
 }
 
 .maru-font {
-  font-family: 'MaruBuri';
+  /*font-family: 'MaruBuri';*/
+  font-family: "Gyeonggi_Batang_Regular";
+}
+
+@font-face {
+  font-family: 'ChosunCentennial';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gyeonggi_Batang_Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 .tangerine-font {
@@ -11204,4 +11223,22 @@ html {
 
 .thanks {
   font-size: 1.5rem;
+}
+
+.font-0 {
+  font-size: 0.85rem;
+}
+
+.font-1 {
+  font-size: 1.2rem;
+}
+
+.font-2 {
+  font-size: 1.5rem;
+}
+
+.divider-line {
+  width: 40px; /* 직선 길이 */
+  height: 1px; /* 직선 두께 */
+  background-color: #ccc; /* 직선 색상 */
 }
