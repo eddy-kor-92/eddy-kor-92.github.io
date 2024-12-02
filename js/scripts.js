@@ -51,3 +51,19 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
+
+function copy(element, event) {
+    console.log("test")
+    event.stopPropagation(); // 클릭 이벤트 전파 방지
+    const accountId = element.dataset.accountId; // data-account-id 속성에서 계좌번호 ID 가져오기
+    const accountText = document.getElementById(accountId).textContent;
+
+    // 클립보드에 복사
+    navigator.clipboard.writeText(accountText)
+        .then(() => {
+            alert('계좌번호가 복사되었습니다: ' + accountText);
+        })
+        .catch(err => {
+            console.error('복사 실패:', err);
+        });
+}

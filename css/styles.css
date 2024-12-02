@@ -11110,15 +11110,14 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 0.25rem 20px;
   background-color: white;
   width: 100%;
   max-width: 350px;
 }
 
 .contact-row .name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.15rem;
   color: #333;
 }
 
@@ -11162,7 +11161,7 @@ html {
 }
 
 .info-header .toggle-icon {
-  color: #007bff;
+  color: #ecb671;
   transition: transform 0.3s ease;
 }
 
@@ -11176,12 +11175,31 @@ html {
   color: #555;
 }
 
+.account-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
 .info-content .account {
   margin-top: 5px;
 }
 
 .info-box.group-start {
   border-top: 1px solid #ccc; /* 새로운 그룹의 첫 박스는 위쪽 border 추가 */
+}
+
+.copy-icon {
+  font-size: 16px;
+  color: #ecb671;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.copy-icon:hover {
+  color: #e19d48;
 }
 
 .thanks {
