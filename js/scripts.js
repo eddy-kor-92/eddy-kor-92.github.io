@@ -52,6 +52,40 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('#portfolioCarousel'); // 메인 카루셀
+    const thumbnails = document.querySelectorAll('.carousel-thumbnails img'); // 썸네일 이미지
+    const thumbnailsContainer = document.querySelector('.carousel-thumbnails'); // 썸네일 슬라이더 컨테이너
+
+    // 카루셀 슬라이드 변경 이벤트
+    carousel.addEventListener('slide.bs.carousel', function (event) {
+        const activeIndex = event.to; // 변경된 슬라이드의 인덱스
+
+        // 모든 썸네일에서 active 클래스 제거
+        thumbnails.forEach((thumbnail) => thumbnail.classList.remove('active'));
+
+        // 해당 인덱스의 썸네일에 active 클래스 추가
+        const activeThumbnail = thumbnails[activeIndex];
+        activeThumbnail.classList.add('active');
+
+        // 썸네일 슬라이더 안에서 스크롤 이동
+        const thumbnailLeft = activeThumbnail.offsetLeft; // 활성 썸네일의 왼쪽 위치
+        const containerScrollLeft = thumbnailsContainer.scrollLeft; // 현재 컨테이너의 스크롤 위치
+        const containerWidth = thumbnailsContainer.offsetWidth; // 컨테이너 너비
+        const thumbnailWidth = activeThumbnail.offsetWidth; // 썸네일 너비
+
+        // 계산된 스크롤 위치 (썸네일을 컨테이너 중앙에 배치)
+        const scrollTo = thumbnailLeft - containerWidth / 2 + thumbnailWidth / 2;
+
+        // 슬라이더 컨테이너 스크롤 이동 (화면 포커스는 이동하지 않음)
+        thumbnailsContainer.scrollTo({
+            left: scrollTo,
+            behavior: 'smooth', // 부드러운 스크롤
+        });
+    });
+});
+
+
 function copy(element, event) {
     console.log("test")
     event.stopPropagation(); // 클릭 이벤트 전파 방지

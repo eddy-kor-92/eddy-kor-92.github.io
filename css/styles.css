@@ -11093,16 +11093,23 @@ html {
   overflow-x: auto;
   overflow-y: hidden;
   gap: 10px;
+  scroll-behavior: smooth;
 }
 
 .carousel-thumbnails img {
-  border-radius: 5px;
-  border: 2px solid transparent;
+  width: 60px; /* 썸네일 크기 */
+  height: 45px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-thumbnails img.active {
-  border-color: #007bff; /* 강조 색상 */
+  opacity: 1;
+  transform: scale(1.1);
 }
+
 
 .maru-font {
   /*font-family: 'MaruBuri';*/
